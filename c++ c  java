@@ -1,0 +1,136 @@
+#include <iostream>//標準輸入輸出
+using namespace std;//宣告變數
+int main()//主函式
+{
+    cout << "Hello, world!" << endl;//印出Hello World
+    return 0;//退出
+}
+==============================
+#include <stdio.h>//標準輸入輸出
+ 
+int main()//主函式
+{
+    /* 我的第一個 C 程序 */
+    printf("Hello, World! \n");//印出Hello,Word
+ 
+    return 0;//退出
+}
+===============================
+public class HelloWorld {//創建類別
+    public static void main(String[] args) {//創建一個主函式
+        System.out.println("Hello World");//印出Hello,Word
+    }
+}
+=============================================================================
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+   int a = 21;
+   int b = 10;
+   int c;
+ 
+   c = a + b;
+   cout << "Line 1 - c 的值是 " << c << endl ;
+   c = a - b;
+   cout << "Line 2 - c 的值是 " << c << endl ;
+   c = a * b;
+   cout << "Line 3 - c 的值是 " << c << endl ;
+   c = a / b;
+   cout << "Line 4 - c 的值是 " << c << endl ;
+   c = a % b;
+   cout << "Line 5 - c 的值是 " << c << endl ;
+ 
+   int d = 10;   //  测试自增、自减
+   c = d++;
+   cout << "Line 6 - c 的值是 " << c << endl ;
+ 
+   d = 10;    // 重新赋值
+   c = d--;
+   cout << "Line 7 - c 的值是 " << c << endl ;
+   return 0;
+}
+==========================================
+#include <stdio.h>
+ 
+int main()
+{
+   int a = 21;
+   int b = 10;
+   int c ;
+ 
+   c = a + b;
+   printf("Line 1 - c 的值是 %d\n", c );
+   c = a - b;
+   printf("Line 2 - c 的值是 %d\n", c );
+   c = a * b;
+   printf("Line 3 - c 的值是 %d\n", c );
+   c = a / b;
+   printf("Line 4 - c 的值是 %d\n", c );
+   c = a % b;
+   printf("Line 5 - c 的值是 %d\n", c );
+   c = a++;  // 赋值后再加 1 ，c 为 21，a 为 22
+   printf("Line 6 - c 的值是 %d\n", c );
+   c = a--;  // 赋值后再减 1 ，c 为 22 ，a 为 21
+   printf("Line 7 - c 的值是 %d\n", c );
+ 
+}
+==========================================
+public class Test {
+ 
+  public static void main(String[] args) {
+     int a = 10;
+     int b = 20;
+     int c = 25;
+     int d = 25;
+     System.out.println("a + b = " + (a + b) );
+     System.out.println("a - b = " + (a - b) );
+     System.out.println("a * b = " + (a * b) );
+     System.out.println("b / a = " + (b / a) );
+     System.out.println("b % a = " + (b % a) );
+     System.out.println("c % a = " + (c % a) );
+     System.out.println("a++   = " +  (a++) );
+     System.out.println("a--   = " +  (a--) );
+     // 查看  d++ 与 ++d 的不同
+     System.out.println("d++   = " +  (d++) );
+     System.out.println("++d   = " +  (++d) );
+  }
+}
+================================================================================
+#include <iostream>
+using namespace std;
+ 
+int main ()
+{
+ 
+   for( ; ; )
+   {
+      printf("This loop will run forever.\n");
+   }
+ 
+   return 0;
+}
+========================================
+#include <stdio.h>
+ 
+int main ()
+{
+   for( ; ; )
+   {
+      printf("该循环会永远执行下去！\n");
+   }
+   return 0;
+}
+=========================================
+public class Test {
+   public static void main(String args[]) {
+      int x = 10;
+      while( x < 20 ) {
+         System.out.print("value of x : " + x );
+         x++;
+         System.out.print("\n");
+      }
+   }
+}
+==========================================================================
