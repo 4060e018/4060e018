@@ -22,115 +22,234 @@ public class HelloWorld {//創建類別
     }
 }
 =============================================================================
-#include <iostream>
-using namespace std;
+#include <iostream>//標準輸入輸出
+using namespace std;//宣告變數
  
-int main()
-{
-   int a = 21;
-   int b = 10;
-   int c;
- 
-   c = a + b;
-   cout << "Line 1 - c 的值是 " << c << endl ;
-   c = a - b;
-   cout << "Line 2 - c 的值是 " << c << endl ;
-   c = a * b;
-   cout << "Line 3 - c 的值是 " << c << endl ;
-   c = a / b;
-   cout << "Line 4 - c 的值是 " << c << endl ;
-   c = a % b;
-   cout << "Line 5 - c 的值是 " << c << endl ;
- 
-   int d = 10;   //  测试自增、自减
-   c = d++;
-   cout << "Line 6 - c 的值是 " << c << endl ;
- 
-   d = 10;    // 重新赋值
-   c = d--;
-   cout << "Line 7 - c 的值是 " << c << endl ;
-   return 0;
-}
-==========================================
-#include <stdio.h>
- 
-int main()
-{
-   int a = 21;
-   int b = 10;
-   int c ;
- 
-   c = a + b;
-   printf("Line 1 - c 的值是 %d\n", c );
-   c = a - b;
-   printf("Line 2 - c 的值是 %d\n", c );
-   c = a * b;
-   printf("Line 3 - c 的值是 %d\n", c );
-   c = a / b;
-   printf("Line 4 - c 的值是 %d\n", c );
-   c = a % b;
-   printf("Line 5 - c 的值是 %d\n", c );
-   c = a++;  // 赋值后再加 1 ，c 为 21，a 为 22
-   printf("Line 6 - c 的值是 %d\n", c );
-   c = a--;  // 赋值后再减 1 ，c 为 22 ，a 为 21
-   printf("Line 7 - c 的值是 %d\n", c );
- 
-}
-==========================================
-public class Test {
- 
-  public static void main(String[] args) {
-     int a = 10;
-     int b = 20;
-     int c = 25;
-     int d = 25;
-     System.out.println("a + b = " + (a + b) );
-     System.out.println("a - b = " + (a - b) );
-     System.out.println("a * b = " + (a * b) );
-     System.out.println("b / a = " + (b / a) );
-     System.out.println("b % a = " + (b % a) );
-     System.out.println("c % a = " + (c % a) );
-     System.out.println("a++   = " +  (a++) );
-     System.out.println("a--   = " +  (a--) );
-     // 查看  d++ 与 ++d 的不同
-     System.out.println("d++   = " +  (d++) );
-     System.out.println("++d   = " +  (++d) );
-  }
-}
-================================================================================
-#include <iostream>
-using namespace std;
- 
-int main ()
+int main ()//主函式
 {
  
-   for( ; ; )
+   for( ; ; )//迴圈
    {
-      printf("This loop will run forever.\n");
+      printf("This loop will run forever.\n");//印出
    }
  
-   return 0;
+   return 0;//退出
 }
-========================================
-#include <stdio.h>
+===========================
+#include <stdio.h>//標準輸入輸出
  
-int main ()
+int main ()//主函式
 {
-   for( ; ; )
+   for( ; ; )//迴圈
    {
-      printf("该循环会永远执行下去！\n");
+      printf("該循環會永遠執行下去！\n");//印出
    }
-   return 0;
+   return 0;//退出
 }
-=========================================
+===========================
 public class Test {
    public static void main(String args[]) {
-      int x = 10;
-      while( x < 20 ) {
+ 
+      for(int x = 10; x < 20; x = x+1) {
          System.out.print("value of x : " + x );
-         x++;
          System.out.print("\n");
       }
    }
 }
-==========================================================================
+===================================================================
+#include <stdio.h> 
+#include <stdlib.h> 
+int fibonacci(int n); 
+int main(int argc, char *argv[]) 
+{int n; 
+int j=0; 
+printf("輸入需要第幾個費氏數:"); 
+scanf("%d",&n); 
+int i[n]; 
+i[0]=0; 
+i[1]=1; 
+printf("%5d%5d",i[0],i[1]); 
+for(j=0;j<=n-3;j++){ 
+i[j+2]=i[j]+i[j+1]; 
+printf("%5d",i[j+2]); 
+} 
+printf("n"); 
+fibonacci(n); 
+system("PAUSE"); 
+return 0; 
+} 
+=====================================
+int fibonacci(int n){ 
+int a=0,b[n]; 
+b[a]=0; 
+b[a+1]=1; 
+for(a=0;a<=n-2;a++) 
+b[a+2]=b[a]+b[a+1]; 
+return printf("第%d個Fibonacci數為 %dn",n,b[n-1]); 
+}
+======================================
+# include <stdlib.h>
+# include <stdio.h>
+ 
+int main(){
+ 
+    int n, i, n_2=0, n_1=1, fib;
+ 
+    while(1){
+ 
+        printf("The 0th number is 0, and the first number is 1\n");
+        printf("ex : 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 ...\n\n");
+        printf("Please input an integer to show the last value of Fibonacci Sequence :\n");
+        scanf("%d", &n);
+        printf("\n");
+ 
+        if (n == 0)
+            fib = n_2;
+ 
+        else if (n == 1)
+            fib = n_1;
+ 
+        else{
+ 
+            for (i=2; i<=n; i++) {
+                fib = n_2 + n_1;
+                n_2 = n_1;
+                n_1 = fib;
+            }
+ 
+            n_2 = 0;
+            n_1 = 1;
+ 
+        }
+ 
+        printf("The Fibonacci Sequence is %d\n\n", fib);
+ 
+        system("PAUSE");
+        system("CLS");
+ 
+    }
+ 
+    return 0;
+ 
+}
+========================================================================================
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[])
+{
+int a,b,c;
+printf("請輸入三個整數數字\n");
+scanf("%d%d%d",&a,&b,&c);
+if (a>b)
+if(a>c)
+if(b>c)
+printf("三數由小到大=%d%d%d\n",c,b,a);
+else
+printf("三數由小到大=%d%d%d\n",b,c,a);
+else
+printf("三數由小到大=%d%d%d\n",b,a,c);
+else
+if (b>c)
+if (a>c)
+printf("三數由小到大=%d%d%d\n",c,a,b);
+else
+printf("三數由小到大=%d%d%d\n",a,c,b);
+else
+printf("三數由小到大=%d%d%d\n",a,b,c);
+system("PAUSE");
+return 0;
+}
+==================================
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+int x,y,z,t;
+scanf("%d%d%d",&x,&y,&z);
+if (x>y)
+{t=x;x=y;y=t;} /*交換x,y的值*/
+if(x>z)
+{t=z;z=x;x=t;}/*交換x,z的值*/
+if(y>z)
+{t=y;y=z;z=t;}/*交換z,y的值*/
+printf("small to big: %d %d %dn",x,y,z);
+}
+==================================
+import java.io.*;
+public class Count{
+public static void main(String[] args) throws IOException{
+ BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+int x;
+int y;
+int z;
+system.out.print("Please input first number:");
+x = Integer.parseInt(br.readLine());
+system.out.print("Please input second number:");
+y= Integer.parseInt(br.readLine());
+system.out.print("Please input third number:");
+z = Integer.parseInt(br.readLine());
+//一下算法有点类似于冒泡算法
+int a ;
+if(x>y){
+a=x;
+x=y;
+y=a;
+}
+if(y>z){
+a=y;
+y=z;
+z=a;
+}
+if(x>y){
+a=x;
+x=y;
+y=a;
+}
+system.out.println("The resault is " + x +"," + y+","+z);
+}
+}
+============================================================================================
+#include <cstdlib> 
+#include <iostream>using namespace std;int main(void) 
+{ 
+int i, j; for(i = 1; i <= 9; i += 3){ 
+for(j = 1; j <= 9; j++){ 
+
+cout << i << " * " << j << " = " << i*j <<'\t' 
+<< i+1 <<" * " << j << " = " << (i+1)*j << '\t' 
+<< i+2 <<" * " << j << " = " << (i+2)*j << endl; 
+} 
+cout <<endl; 
+} 
+
+system("pause"); 
+return 0; 
+}
+==================================
+#include "stdio.h"
+main()
+{
+　int i,j,result;
+　printf("n");
+　for (i=1;i<10;i++)
+　　{ for(j=1;j<10;j++)
+　　　　{
+　　　　　result=i*j;
+　　　　　printf("%d*%d=%-3d",i,j,result);/*-3d表示左對齊，占3位*/
+　　　　}
+　　　printf("n");/*每一行後換行*/
+　　}
+}
+===================================
+public class Multiplication {
+    public static void main(String[] args) {
+        int i, j;
+        for ( i = 1; i <= 9; i++ ) {
+            for ( j = 1; j <= 9; j++ ) {
+                System.out.println(i + "*" + j + "=" + (i*j));
+            }
+            System.out.print("\n");
+        }
+    }
+}
+==============================================================================
